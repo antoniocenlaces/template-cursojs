@@ -19,6 +19,9 @@ console.log(d, e, f);
 
 const pedido = ["judias verdes", "entrecot"];
 let [primerPlato, segundoPlato, bebida = "Agua"] = pedido;
+
+// En la deconstrucción podemos asignar un valor por defecto si el elemento original no tiene el valor pretendido
+
 console.log(
   `Primero: ${primerPlato}, Segundo: ${segundoPlato}, bebida: ${bebida}`
 );
