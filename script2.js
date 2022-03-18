@@ -260,3 +260,37 @@ console.log(allPlayers);
 // Apartado 4
 const players1Final = [...player1, "Thiago", "Coutinho", "Perisic"];
 console.log(players1Final);
+
+// Apartado 5
+const { team1, x: draw, team2 } = game.odds;
+console.log(team1, draw, team2);
+// const {odds: {team1, team2, x: draw}} = game;
+
+// Apartado 6
+function printGoals3(...jugadores) {
+  console.log(jugadores, typeof jugadores);
+  for (const jugador of jugadores) {
+    console.log(`${jugador} marca el gol`);
+  }
+}
+printGoals3(...game.scored);
+const countOccurrences = (arr, val) =>
+  arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+
+// REST OPERATOR en el argumento de la función
+function printGoals(...goleadores) {
+  for (const jugador of goleadores) {
+    console.log(jugador, countOccurrences(goleadores, jugador));
+  }
+}
+printGoals(...game.scored);
+printGoals("Davies", "Muller", "Lewandowski", "Kimmich");
+
+// Apartado 7
+// Obtener datos de apuestas como en apartado 5
+// const { team1, x: draw, team2 } = game.odds;
+
+// Operador && devuelve el primer operando que es false o el último si son todos verdaderos
+team1 > team2 && console.log(`Team2 tiene más posibilidades de ganar`);
+team1 < team2 && console.log(`Team1 tiene más posibilidades de ganar`);
+team1 === team2 && console.log(`Empate`);
